@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigrama de Puestos</title>
+
+    <!-- Librerías necesarias -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.4/css/jquery.orgchart.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.4/js/jquery.orgchart.min.js"></script>
+
+    <style>
+        #orgChart {
+            margin: 20px auto;
+            width: 80%;
+            height: auto;
+        }
+
+        .orgchart .node {
+            font-size: 14px;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+
+        .employee-list {
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Organigrama de Puestos</h1>
+    <div id="orgChart"></div>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("index2.php") // Cambia el nombre de este archivo si es necesario
+                .done(function (data) {
+                    console.log("✅ Datos recibidos:", data);
+
+                    if (data.length > 0) {
+                        let rootNode = data.find(nodo => nodo.parent === "#");
+                        if (!rootNode) {
+                            console.error("❌ No se encontró un nodo raíz.");
+                            return;
+                        }
+
+                        let chartData = {
+                            id: rootNode.id,
+                            name: rootNode.name,
+                            children: construirJerarquia(data, rootNode.id)
+                        };
+
+                        $('#orgChart').orgchart({
+                            'data': chartData,
+                            'nodeContent': 'name',
+                            'pan': true,
+                            'zoom': true
+                        });
+                    } else {
+                        console.warn("⚠ No se encontraron datos.");
+                    }
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("❌ Error en AJAX:", textStatus, errorThrown);
+                });
+        });
+
+        function construirJerarquia(data, parentId) {
+            let hijos = data.filter(nodo => nodo.parent == parentId);
+            return hijos.map(nodo => ({
+                id: nodo.id,
+                name: formatearNombre(nodo),
+                children: construirJerarquia(data, nodo.id)
+            }));
+        }
+
+        function formatearNombre(nodo) {
+            // Verificamos si hay empleados para ese puesto
+            let empleados = nodo.employees && nodo.employees.length > 0
+                ? nodo.employees.map(emp => `${emp.name} (${emp.department})`).join("<br>")
+                : 'No hay empleados';
+
+            return `${nodo.name}<br><span class="employee-list">${empleados}</span>`;
+        }
+    </script>
+
+</body>
+
+</html>

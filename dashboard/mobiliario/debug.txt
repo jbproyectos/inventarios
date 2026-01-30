@@ -1,0 +1,21 @@
+Array
+(
+    [id_mobiliario] => 16
+    [codigo_inventario] => MOB-2025-LGY6
+    [descripcion] => 3 plazas
+    [categoria] => Sillón
+    [modelo] => 
+    [marca] => 
+    [numero_serie] => NO-APLICA
+    [condicion] => regular
+    [estado_actual] => almacenado
+    [total] => 2
+    [responsable] => NO-ASIGNADO
+    [costo] => 0.00
+    [fecha_adquisicion] => 
+    [garantia_vencimiento] => 
+    [depreciacion_anual] => 0.00
+    [disponibilidad] => disponible
+    [id_domicilio] => 249
+    [notas] => 
+)

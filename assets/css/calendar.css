@@ -1,0 +1,137 @@
+
+#grafico-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Redimensiona los botones del calendario */
+.fc-button {
+    font-size: 8px !important;
+    /* Cambiar el tamaño de la fuente */
+    padding: 4px 8px !important;
+    /* Ajustar el padding para hacerlo más pequeño */
+}
+
+/* Opcional: Reducir el tamaño de los botones cuando están en estado activo */
+.fc-button-active {
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+}
+
+/* Opcional: Reducir el tamaño del título */
+.fc-toolbar-title {
+    font-size: 16px !important;
+    /* Reducir el tamaño del título */
+}
+
+/* Estilo del título */
+.fc-toolbar-title {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+    /* Espacio entre el título y los botones */
+}
+
+/* Estilos generales del calendario */
+#calendar {
+    font-family: 'Arial', sans-serif !important;
+    /* background-color: #f4f7fc !important; */
+    border-radius: 8px !important;
+    padding: 10px !important;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; */
+}
+
+/* Estilo para los botones del encabezado */
+.fc-button {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: none !important;
+    font-size: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+}
+
+.fc-button:hover {
+    background-color: #45a049 !important;
+}
+
+/* Estilo del título del mes */
+.fc-toolbar-title {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
+/* Cambiar el color de los días de la semana */
+.fc-day-header {
+    background-color: #3b5998 !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* Estilo para los días del mes */
+.fc-day {
+    background-color: #ffffff !important;
+    color: #555 !important;
+    border-radius: 5px !important;
+}
+
+/* Resaltar el día actual */
+.fc-day-today {
+    background-color: rgb(176, 162, 34) !important;
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+/* Estilo para eventos */
+.fc-event {
+    background-color: #ff9800 !important;
+    color: white !important;
+    border-radius: 5px !important;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+}
+
+/* Estilo para el tooltip de eventos */
+.fc-event:hover {
+    background-color: #ff5722 !important;
+}
+
+/* Resaltar las fechas de eventos */
+.fc-day.fc-day-selected {
+    background-color: #009688 !important;
+    color: white !important;
+}
+
+/* Estilo de los botones de navegación */
+.fc-prev-button,
+.fc-next-button,
+.fc-today-button {
+    background-color: rgb(166, 151, 21) !important;
+    color: white !important;
+    border: none !important;
+    padding: 2px 8px !important;
+    border-radius: 5px !important;
+}
+
+.fc-prev-button:hover,
+.fc-next-button:hover,
+.fc-today-button:hover {
+    background-color: rgb(81, 82, 18) !important;
+}
+
+/* Estilo para resaltar las fechas de los eventos */
+.event-date {
+    background-color: #ffcc00;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.event-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}

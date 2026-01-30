@@ -1,0 +1,33 @@
+.active {
+    background-color: #121317; 
+    color: white; 
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; 
+}
+
+/* [data-theme='dark'] .active {
+    background-color: #ca3b3b;
+    color: #ffffff; 
+} */
+
+ /* Para un tono más oscuro de dorado */
+ .text-dorado {
+  color: #FFD700;
+  /* Valor hexadecimal para dorado */
+}
+
+/* Para un tono más claro de dorado */
+.text-dorado-claro {
+  color: gold;
+  /* Nombre clave para dorado */
+}
+
+.shadow-outline-yellow:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.45);
+  /* Amarillo con opacidad 0.45 */
+}
+
+.text-gris {
+  color: #808080;
+  /* Valor hexadecimal para gris oscuro */
+}
