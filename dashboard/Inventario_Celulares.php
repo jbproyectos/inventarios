@@ -4,7 +4,7 @@ include '../includes/middleware.php';
 verificarSesion();
 include "../includes/conexionbd.php";
 
-// Obtén el user_id de la sesión
+// Obtén el user_id de la sesión - acepta idworky
 $user_id = $_SESSION["user_id"];
 
 // Obtener el rol del usuario actual
