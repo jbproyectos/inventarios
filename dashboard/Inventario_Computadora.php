@@ -4,7 +4,7 @@ include '../includes/middleware.php';
 verificarSesion();
 include "../includes/conexionbd.php";
 // session_start();
-// echo $_SESSION["user_id"];
+// echo $_SESSION["user_id"]; acepta idworky
 
 // Obtén el user_id de la sesión
 $user_id = $_SESSION["user_id"];
